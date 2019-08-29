@@ -9,6 +9,9 @@ node{
     stage("Pull Repo"){
          sh "ssh ec2-user@${ENVIR} git clone https://github.com/miguelgrinberg/flask-examples.git"
     }
+    stage("Remove repo"){
+         sh "ssh ex2-user@${ENVIR} sudo rm -rf /home/ec2-user/flask-examples"   
+    }
     stage("Install Requirements"){
        // sh "virtualenv /tmp/venv"
        // sh ". /tmp/venv/bin/activate"
